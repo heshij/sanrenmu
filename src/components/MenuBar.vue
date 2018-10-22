@@ -80,6 +80,6 @@
     }
 
     .MenuBar ul li .router-link-exact-active span {
-        color: #fb9b00;
+        color: #087ccd;
     }
 </style>
