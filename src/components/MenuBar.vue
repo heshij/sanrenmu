@@ -1,34 +1,10 @@
 <template>
     <div class="MenuBar">
         <ul>
-            <li>
-                <router-link to="/">
-                    <span class="iconfont">&#xe634;</span>
-                    <span class="text">首页</span>
-                </router-link>
-            </li>
-            <li>
-                <router-link to="/Search">
-                    <span class="iconfont">&#xe62b;</span>
-                    <span class="text">搜索</span>
-                </router-link>
-            </li>
-            <li>
-                <router-link to="/Classify">
-                    <span class="iconfont">&#xe72b;</span>
-                    <span class="text">分类</span>
-                </router-link>
-            </li>
-            <li>
-                <router-link to="/ShopCar">
-                    <span class="iconfont">&#xe656;</span>
-                    <span class="text">购物车</span>
-                </router-link>
-            </li>
-            <li>
-                <router-link to="/User">
-                    <span class="iconfont">&#xe619;</span>
-                    <span class="text">我</span>
+            <li v-for="item of menuBarList" :key="item.id">
+                <router-link :to="item.link">
+                    <span class="iconfont" v-html="item.icon"></span>
+                    <span class="text">{{item.text}}</span>
                 </router-link>
             </li>
         </ul>
@@ -36,7 +12,37 @@
 </template>
 <script>
     export default {
-        name: "MenuBar"
+        name: "MenuBar",
+        data(){
+            return{
+                menuBarList:[{
+                    id:1,
+                    link:"/",
+                    icon:"&#xe634;",
+                    text:"首页"
+                },{
+                    id:2,
+                    link:"/Search",
+                    icon:"&#xe62b;",
+                    text:"搜索"
+                },{
+                    id:3,
+                    link:"/Classify",
+                    icon:"&#xe72b;",
+                    text:"分类"
+                },{
+                    id:4,
+                    link:"/ShopCar",
+                    icon:"&#xe656;",
+                    text:"购物车"
+                },{
+                    id:5,
+                    link:"/User",
+                    icon:"&#xe619;",
+                    text:"我"
+                }]
+            }
+        }
     }
 </script>
 <style scoped>
