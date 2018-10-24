@@ -74,16 +74,10 @@
         text-align: center;
         font-size: 52px;
     }
-    .other ul li .iconfont:nth-child(1){
+    .other ul li:nth-child(odd) .iconfont{
         color: #087ccd;
     }
-    .other ul li .iconfont:nth-child(2){
-        color: #08cdb8;
-    }
-    .other ul li .iconfont:nth-child(3){
-        color: #087ccd;
-    }
-    .other ul li .iconfont:nth-child(4){
+    .other ul li:nth-child(even) .iconfont{
         color: #08cdb8;
     }
     .other ul li span{

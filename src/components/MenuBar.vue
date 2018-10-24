@@ -49,8 +49,9 @@
     .MenuBar {
         position: fixed;
         width: 100%;
-        height: 100px;
+        height: 96px;
         bottom: 0;
+        background-color: #fff;
     }
 
     .MenuBar ul {
