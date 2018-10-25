@@ -79,10 +79,12 @@
         display: flex;
         justify-content: space-between;
         flex-wrap:wrap;
+        position: relative;
     }
     .newPro ul li{
         width: 162px;
         height: 162px;
+        margin-bottom: 10px;
         background-color: skyblue;
     }
     .newPro ul li:nth-child(1){
@@ -91,5 +93,8 @@
     }
     .newPro ul li:nth-child(4){
         width: 334px;
+        position: absolute;
+        top: 172px;
+        right: 0;
     }
 </style>
