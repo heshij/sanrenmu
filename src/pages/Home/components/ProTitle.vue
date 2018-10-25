@@ -22,7 +22,7 @@
     .proTitle{
         width: 680px;
         height: 55px;
-        margin: 10px 35px;
+        margin: 30px 35px 6px 35px;
         display: flex;
         justify-content: space-between;
         background-color: #fff;

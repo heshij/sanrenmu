@@ -74,6 +74,7 @@
     .hotPro ul{
         width: 100%;
         background-color: #fff;
+        padding-bottom: 10px;
     }
     .hotPro ul li{
         width: inherit;

@@ -5,6 +5,8 @@
         <other></other>
         <ProTitle :info="proListTitle.hot"></ProTitle>
         <HotPro></HotPro>
+        <ProTitle :info="proListTitle.new"></ProTitle>
+        <NewPro></NewPro>
         <MenuBar></MenuBar>
     </div>
 </template>
@@ -15,6 +17,7 @@
     import other from "./components/other.vue";
     import ProTitle from "./components/ProTitle.vue";
     import HotPro from "./components/HotPro.vue";
+    import NewPro from "./components/NewPro.vue";
     export default {
         name: "Home",
         components:{
@@ -22,7 +25,8 @@
             HomeTop,
             other,
             ProTitle,
-            HotPro
+            HotPro,
+            NewPro
         },
         data(){
             return{
