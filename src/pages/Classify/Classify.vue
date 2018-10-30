@@ -1,13 +1,15 @@
 <template>
     <div class="Classify">
-        我是分类
+        <classify-header></classify-header>
         <MenuBar></MenuBar>
     </div>
 </template>
 
 <script>
+    import ClassifyHeader from "./components/classifyHeader";
     export default {
-        name: "Classify"
+        name: "Classify",
+        components: {ClassifyHeader}
     }
 </script>
 

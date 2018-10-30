@@ -1,13 +1,15 @@
 <template>
     <div class="ShopCar">
-        我是购物车
+        <shop-header></shop-header>
         <MenuBar></MenuBar>
     </div>
 </template>
 
 <script>
+    import ShopHeader from "./components/shopHeader";
     export default {
-        name: "ShopCar"
+        name: "ShopCar",
+        components: {ShopHeader}
     }
 </script>
 

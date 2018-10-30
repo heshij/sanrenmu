@@ -127,7 +127,7 @@
         justify-content: center;
         align-items: center;
         position: absolute;
-        z-index: 99;
+        z-index: 1;
         padding-top: 18px;
     }
     .newPro ul li .image{
