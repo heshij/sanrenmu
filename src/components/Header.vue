@@ -23,6 +23,8 @@
         align-items: center;
         font-size: 32px;
         letter-spacing: 2px;
+        position: relative;
+        z-index: 99;
     }
     .Header a {
         color: #fff;
