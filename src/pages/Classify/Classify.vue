@@ -29,9 +29,9 @@
                                     v-for="item of items"
                                     :key="item.id"
                             >
-                                <router-link to="/ProDetails">
+                                <router-link to="/ProList">
                                     <div class="image">
-                                        <img src="../../images/classify/classifyPro02.png">
+                                        <img :src="require(`../../images/classify/${item.imgUrl}.png`)">
                                     </div>
                                     <p>{{item.text}}</p>
                                 </router-link>
@@ -48,6 +48,7 @@
 <script>
     import ClassifyHeader from "./components/classifyHeader";
     import BetterScroll from 'better-scroll'
+
     export default {
         name: "Classify",
         components: {ClassifyHeader},
@@ -56,463 +57,56 @@
                 scrollY:0,
                 listHeight:[],
                 slideBarList: ["家具", "野外", "急救包", "折叠包", "钥匙扣", "设备", "军刀", "其他"],
-                proList: [
-                    [
-                        {
-                            "id": 1,
-                            "imgUrl": require('../../images/classify/classifyPro01.png'),
-                            "text": "瑞士军刀"
-                        },
-                        {
-                            "id": 2,
-                            "imgUrl": require('../../images/classify/classifyPro03.png'),
-                            "text": "折叠刀"
-                        },
-                        {
-                            "id": 3,
-                            "imgUrl": require('../../images/classify/classifyPro04.png'),
-                            "text": "小折刀"
-                        },
-                        {
-                            "id": 4,
-                            "imgUrl": require('../../images/classify/classifyPro05.png'),
-                            "text": "水果刀"
-                        },
-                        {
-                            "id": 5,
-                            "imgUrl": require('../../images/classify/classifyPro06.png'),
-                            "text": "小折刀"
-                        },
-                        {
-                            "id": 6,
-                            "imgUrl": require('../../images/classify/classifyPro07.png'),
-                            "text": "A-123"
-                        },
-                        {
-                            "id": 7,
-                            "imgUrl": require('../../images/classify/classifyPro08.png'),
-                            "text": "折叠刀"
-                        },
-                        {
-                            "id": 8,
-                            "imgUrl": require('../../images/classify/classifyPro09.png'),
-                            "text": "折叠水果刀"
-                        },
-                        {
-                            "id": 9,
-                            "imgUrl": require('../../images/classify/classifyPro10.png'),
-                            "text": "瑞士军刀"
-                        },
-                        {
-                            "id": 10,
-                            "imgUrl": require('../../images/classify/classifyPro02.png'),
-                            "text": "户外小刀"
-                        }
-                    ],
-                    [
-                        {
-                            "id": 1,
-                            "imgUrl": require('../../images/classify/classifyPro01.png'),
-                            "text": "瑞士军刀"
-                        },
-                        {
-                            "id": 2,
-                            "imgUrl": require('../../images/classify/classifyPro03.png'),
-                            "text": "折叠刀"
-                        },
-                        {
-                            "id": 3,
-                            "imgUrl": require('../../images/classify/classifyPro04.png'),
-                            "text": "小折刀"
-                        },
-                        {
-                            "id": 4,
-                            "imgUrl": require('../../images/classify/classifyPro05.png'),
-                            "text": "水果刀"
-                        },
-                        {
-                            "id": 5,
-                            "imgUrl": require('../../images/classify/classifyPro06.png'),
-                            "text": "小折刀"
-                        },
-                        {
-                            "id": 6,
-                            "imgUrl": require('../../images/classify/classifyPro07.png'),
-                            "text": "A-123"
-                        },
-                        {
-                            "id": 7,
-                            "imgUrl": require('../../images/classify/classifyPro08.png'),
-                            "text": "折叠刀"
-                        },
-                        {
-                            "id": 8,
-                            "imgUrl": require('../../images/classify/classifyPro09.png'),
-                            "text": "折叠水果刀"
-                        },
-                        {
-                            "id": 9,
-                            "imgUrl": require('../../images/classify/classifyPro10.png'),
-                            "text": "瑞士军刀"
-                        },
-                        {
-                            "id": 10,
-                            "imgUrl": require('../../images/classify/classifyPro02.png'),
-                            "text": "户外小刀"
-                        }
-                    ],
-                    [
-                        {
-                            "id": 1,
-                            "imgUrl": require('../../images/classify/classifyPro01.png'),
-                            "text": "瑞士军刀"
-                        },
-                        {
-                            "id": 2,
-                            "imgUrl": require('../../images/classify/classifyPro03.png'),
-                            "text": "折叠刀"
-                        },
-                        {
-                            "id": 3,
-                            "imgUrl": require('../../images/classify/classifyPro04.png'),
-                            "text": "小折刀"
-                        },
-                        {
-                            "id": 4,
-                            "imgUrl": require('../../images/classify/classifyPro05.png'),
-                            "text": "水果刀"
-                        },
-                        {
-                            "id": 5,
-                            "imgUrl": require('../../images/classify/classifyPro06.png'),
-                            "text": "小折刀"
-                        },
-                        {
-                            "id": 6,
-                            "imgUrl": require('../../images/classify/classifyPro07.png'),
-                            "text": "A-123"
-                        },
-                        {
-                            "id": 7,
-                            "imgUrl": require('../../images/classify/classifyPro08.png'),
-                            "text": "折叠刀"
-                        },
-                        {
-                            "id": 8,
-                            "imgUrl": require('../../images/classify/classifyPro09.png'),
-                            "text": "折叠水果刀"
-                        },
-                        {
-                            "id": 9,
-                            "imgUrl": require('../../images/classify/classifyPro10.png'),
-                            "text": "瑞士军刀"
-                        },
-                        {
-                            "id": 10,
-                            "imgUrl": require('../../images/classify/classifyPro02.png'),
-                            "text": "户外小刀"
-                        }
-                    ],
-                    [
-                        {
-                            "id": 1,
-                            "imgUrl": require('../../images/classify/classifyPro01.png'),
-                            "text": "瑞士军刀"
-                        },
-                        {
-                            "id": 2,
-                            "imgUrl": require('../../images/classify/classifyPro03.png'),
-                            "text": "折叠刀"
-                        },
-                        {
-                            "id": 3,
-                            "imgUrl": require('../../images/classify/classifyPro04.png'),
-                            "text": "小折刀"
-                        },
-                        {
-                            "id": 4,
-                            "imgUrl": require('../../images/classify/classifyPro05.png'),
-                            "text": "水果刀"
-                        },
-                        {
-                            "id": 5,
-                            "imgUrl": require('../../images/classify/classifyPro06.png'),
-                            "text": "小折刀"
-                        },
-                        {
-                            "id": 6,
-                            "imgUrl": require('../../images/classify/classifyPro07.png'),
-                            "text": "A-123"
-                        },
-                        {
-                            "id": 7,
-                            "imgUrl": require('../../images/classify/classifyPro08.png'),
-                            "text": "折叠刀"
-                        },
-                        {
-                            "id": 8,
-                            "imgUrl": require('../../images/classify/classifyPro09.png'),
-                            "text": "折叠水果刀"
-                        },
-                        {
-                            "id": 9,
-                            "imgUrl": require('../../images/classify/classifyPro10.png'),
-                            "text": "瑞士军刀"
-                        },
-                        {
-                            "id": 10,
-                            "imgUrl": require('../../images/classify/classifyPro02.png'),
-                            "text": "户外小刀"
-                        }
-                    ],
-                    [
-                        {
-                            "id": 1,
-                            "imgUrl": require('../../images/classify/classifyPro01.png'),
-                            "text": "瑞士军刀"
-                        },
-                        {
-                            "id": 2,
-                            "imgUrl": require('../../images/classify/classifyPro03.png'),
-                            "text": "折叠刀"
-                        },
-                        {
-                            "id": 3,
-                            "imgUrl": require('../../images/classify/classifyPro04.png'),
-                            "text": "小折刀"
-                        },
-                        {
-                            "id": 4,
-                            "imgUrl": require('../../images/classify/classifyPro05.png'),
-                            "text": "水果刀"
-                        },
-                        {
-                            "id": 5,
-                            "imgUrl": require('../../images/classify/classifyPro06.png'),
-                            "text": "小折刀"
-                        },
-                        {
-                            "id": 6,
-                            "imgUrl": require('../../images/classify/classifyPro07.png'),
-                            "text": "A-123"
-                        },
-                        {
-                            "id": 7,
-                            "imgUrl": require('../../images/classify/classifyPro08.png'),
-                            "text": "折叠刀"
-                        },
-                        {
-                            "id": 8,
-                            "imgUrl": require('../../images/classify/classifyPro09.png'),
-                            "text": "折叠水果刀"
-                        },
-                        {
-                            "id": 9,
-                            "imgUrl": require('../../images/classify/classifyPro10.png'),
-                            "text": "瑞士军刀"
-                        },
-                        {
-                            "id": 10,
-                            "imgUrl": require('../../images/classify/classifyPro02.png'),
-                            "text": "户外小刀"
-                        }
-                    ],
-                    [
-                        {
-                            "id": 1,
-                            "imgUrl": require('../../images/classify/classifyPro01.png'),
-                            "text": "瑞士军刀"
-                        },
-                        {
-                            "id": 2,
-                            "imgUrl": require('../../images/classify/classifyPro03.png'),
-                            "text": "折叠刀"
-                        },
-                        {
-                            "id": 3,
-                            "imgUrl": require('../../images/classify/classifyPro04.png'),
-                            "text": "小折刀"
-                        },
-                        {
-                            "id": 4,
-                            "imgUrl": require('../../images/classify/classifyPro05.png'),
-                            "text": "水果刀"
-                        },
-                        {
-                            "id": 5,
-                            "imgUrl": require('../../images/classify/classifyPro06.png'),
-                            "text": "小折刀"
-                        },
-                        {
-                            "id": 6,
-                            "imgUrl": require('../../images/classify/classifyPro07.png'),
-                            "text": "A-123"
-                        },
-                        {
-                            "id": 7,
-                            "imgUrl": require('../../images/classify/classifyPro08.png'),
-                            "text": "折叠刀"
-                        },
-                        {
-                            "id": 8,
-                            "imgUrl": require('../../images/classify/classifyPro09.png'),
-                            "text": "折叠水果刀"
-                        },
-                        {
-                            "id": 9,
-                            "imgUrl": require('../../images/classify/classifyPro10.png'),
-                            "text": "瑞士军刀"
-                        },
-                        {
-                            "id": 10,
-                            "imgUrl": require('../../images/classify/classifyPro02.png'),
-                            "text": "户外小刀"
-                        }
-                    ],
-                    [
-                        {
-                            "id": 1,
-                            "imgUrl": require('../../images/classify/classifyPro01.png'),
-                            "text": "瑞士军刀"
-                        },
-                        {
-                            "id": 2,
-                            "imgUrl": require('../../images/classify/classifyPro03.png'),
-                            "text": "折叠刀"
-                        },
-                        {
-                            "id": 3,
-                            "imgUrl": require('../../images/classify/classifyPro04.png'),
-                            "text": "小折刀"
-                        },
-                        {
-                            "id": 4,
-                            "imgUrl": require('../../images/classify/classifyPro05.png'),
-                            "text": "水果刀"
-                        },
-                        {
-                            "id": 5,
-                            "imgUrl": require('../../images/classify/classifyPro06.png'),
-                            "text": "小折刀"
-                        },
-                        {
-                            "id": 6,
-                            "imgUrl": require('../../images/classify/classifyPro07.png'),
-                            "text": "A-123"
-                        },
-                        {
-                            "id": 7,
-                            "imgUrl": require('../../images/classify/classifyPro08.png'),
-                            "text": "折叠刀"
-                        },
-                        {
-                            "id": 8,
-                            "imgUrl": require('../../images/classify/classifyPro09.png'),
-                            "text": "折叠水果刀"
-                        },
-                        {
-                            "id": 9,
-                            "imgUrl": require('../../images/classify/classifyPro10.png'),
-                            "text": "瑞士军刀"
-                        },
-                        {
-                            "id": 10,
-                            "imgUrl": require('../../images/classify/classifyPro02.png'),
-                            "text": "户外小刀"
-                        }
-                    ],
-                    [
-                        {
-                            "id": 1,
-                            "imgUrl": require('../../images/classify/classifyPro01.png'),
-                            "text": "瑞士军刀"
-                        },
-                        {
-                            "id": 2,
-                            "imgUrl": require('../../images/classify/classifyPro03.png'),
-                            "text": "折叠刀"
-                        },
-                        {
-                            "id": 3,
-                            "imgUrl": require('../../images/classify/classifyPro04.png'),
-                            "text": "小折刀"
-                        },
-                        {
-                            "id": 4,
-                            "imgUrl": require('../../images/classify/classifyPro05.png'),
-                            "text": "水果刀"
-                        },
-                        {
-                            "id": 5,
-                            "imgUrl": require('../../images/classify/classifyPro06.png'),
-                            "text": "小折刀"
-                        },
-                        {
-                            "id": 6,
-                            "imgUrl": require('../../images/classify/classifyPro07.png'),
-                            "text": "A-123"
-                        },
-                        {
-                            "id": 7,
-                            "imgUrl": require('../../images/classify/classifyPro08.png'),
-                            "text": "折叠刀"
-                        },
-                        {
-                            "id": 8,
-                            "imgUrl": require('../../images/classify/classifyPro09.png'),
-                            "text": "折叠水果刀"
-                        },
-                        {
-                            "id": 9,
-                            "imgUrl": require('../../images/classify/classifyPro10.png'),
-                            "text": "瑞士军刀"
-                        },
-                        {
-                            "id": 10,
-                            "imgUrl": require('../../images/classify/classifyPro02.png'),
-                            "text": "户外小刀"
-                        }
-                    ],
-                ]
+                proList: []
             }
         },
         methods:{
             handleClick(i){
-                this.active = i
+                this.clickEvent = true;
                 if(!event._constructed){
                     return
                 }else{
-                    var right =  this.$refs.wrapperList
-                    var el = right[i]
-                    this.rights.scrollToElement(el,300)
+                    var right =  this.$refs.wrapperList;
+                    var el = right[i];
+                    this.rights.scrollToElement(el,300);
                 }
             },
             initScroll(){
                 this.lefts = new BetterScroll(this.$refs.slideBar,{
                     click:true
-                })
+                });
                 this.rights = new BetterScroll(this.$refs.wrapper,{
                     probeType:3,
                     click:true
-                })
+                });
 
                 this.rights.on("scroll",(props)=>{
-                    this.scrollY = Math.abs(Math.round(props.y))
+                    this.scrollY = Math.abs(Math.round(props.y));
                     // console.log(props)
                 })
             },
             getHeight(){
-                var itemHeight = this.$refs.wrapperList
-                var height = 0
-                this.listHeight.push(height)
-                var that = this
+                var itemHeight = this.$refs.wrapperList;
+                var height = 0;
+                this.listHeight.push(height);
+                var that = this;
                 // console.log(itemHeight)
                 for(var i=0;i<=itemHeight.length-1;i++){
-                    height += itemHeight[i].clientHeight
-                    that.listHeight.push(height)
+                    height += itemHeight[i].clientHeight;
+                    that.listHeight.push(height);
                 }
                 // console.log(this.listHeight)
             }
+        },
+        mounted(){
+            this.$http.get('/api/classifyJson')
+            .then((res)=>{
+                this.proList = res.data.data;
+                this.$nextTick(()=>{
+                    this.initScroll()
+                    this.getHeight()
+                })
+            })
         },
         computed:{
             active(){
@@ -528,21 +122,16 @@
                     }
                 }
             }
-        },
-        mounted(){
-            var that = this
-            this.$nextTick(function(){
-                that.initScroll()
-                that.getHeight()
-            })
         }
+
     }
 </script>
 
 
 <style scoped>
     .Classify {
-        padding-bottom: 104px;
+        padding-top: 190px;
+        padding-bottom: 105px;
     }
 
     .search {
@@ -552,8 +141,9 @@
         justify-content: center;
         padding-top: 18px;
         margin-bottom: 18px;
-        position: relative;
+        position: fixed;
         z-index: 99;
+        top: 96px;
         background-color: #fff;
     }
 
@@ -569,11 +159,13 @@
         width: 750px;
         height: auto;
         display: flex;
+        overflow: hidden;
     }
 
     .main .slideBar {
         width: 128px;
-        height: auto;
+        height: 1038px;
+        background-color: #efebeb;
     }
 
     .main .slideBar ul {
@@ -598,14 +190,16 @@
     }
     .wrapper{
         width: 572px;
-        height: 1000px;
+        height: 780px;
     }
     .wrapper .pro-items{
-        height: 820px;
+        height: auto;
         display: flex;
         flex-wrap: wrap;
         /*justify-content: space-around;*/
         margin-left: 25px;
+        /*overflow: hidden;*/
+        margin-bottom: 20px;
     }
     .wrapper .pro-item{
         width: 180px;

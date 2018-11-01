@@ -1,3 +1,8 @@
+const express = require('express');
+const app = express();
+let classifyJson = require('./src/data/classify.json');
+let apiRoutes = express.Router()
+app.use('/api', apiRoutes)
 module.exports = {
     css: {
         loaderOptions: {
@@ -11,5 +16,17 @@ module.exports = {
                 })]
             }
         }
+    },
+    devServer: {
+        before(app) {
+            app.get('/api/classifyJson', function(req, res){
+                res.json({
+                    errno: 0,
+                    data: classifyJson
+                })
+            })
+        },
+        host: '0.0.0.0',
+        port: 8080
     }
 };

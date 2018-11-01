@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './pages/Home/Home'
 import Classify from './pages/Classify/Classify.vue'
+import ProList from './pages/Classify/components/ProList'
 import ShopCar from './pages/ShopCar/ShopCar.vue'
 import User from './pages/User/User.vue'
 import Search from './pages/Search/Search.vue'
@@ -36,6 +37,11 @@ export default new Router({
           path: '/Search',
           name: 'Search',
           component: Search
+      },
+      {
+          path: '/ProList',
+          name: 'ProList',
+          component: ProList
       }
     /*{
       path: '/about',
