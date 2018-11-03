@@ -13,18 +13,18 @@
                     </li>
                 </ul>
             </div>
-            <div class="wrapper" ref="wrapper">
-                <ul class="wrapper-ul">
+            <div class="wrapper" ref="wrapper" >
+                <ul class="wrapper-ul" ref="wrapperList">
                     <li class="wrapper-li"
                         v-for="(items,index) of proList"
                         :key="index"
-                        ref="wrapperList"
                     >
-                        <ul class="pro-items" ref="proItems">
+                        <ul class="pro-items" >
                             <li
                                     class="pro-item"
                                     v-for="item of items"
                                     :key="item.id"
+                                    ref="proItems"
                             >
                                 <router-link to="/ProList">
                                     <div class="image">
@@ -359,7 +359,7 @@
                 ]
             }
         },
-        methods: {
+       /* methods: {
             InitTabScroll(){
                 let width = 0;
                 for(let i = 0;i < this.proList.length; i++){
@@ -386,6 +386,32 @@
             this.$nextTick(()=>{
                 this.InitTabScroll();
             })
+        }*/
+        mounted() {
+            //即定时器 20ms
+
+            this.$nextTick(() => {
+                let width=0;
+                for (let  i = 0; i <this.proList.length; i++) {
+                    width+=this.$refs.proItems[0].getBoundingClientRect().width
+                }
+                console.log(this.$refs.wrapperList)
+                this.$refs.wrapperList.style.width=width+'px';                //$refs绑定元素
+                this.$nextTick(()=>{
+                    if(!this.scroll){
+                        this.scroll = new BScroll(this.$refs.wrapper, {
+                            //开启点击事件 默认为false
+                            click:true,
+                            startX:0,
+                            scrollX:true,
+                            eventPassthrough:'vertical'
+                        })
+                        console.log(this.scroll)
+                    }else{
+                        this.scroll.refresh()
+                    }
+                })
+            })
         }
     }
 </script>
@@ -397,7 +423,7 @@
     }
 
     .main {
-        width: 750px;
+        width: 100%;
         height: 100%;
     }
 
@@ -436,8 +462,8 @@
     }
 
     .wrapper {
-        width: 680px;
-        height: auto;
+        width: 100%;
+        overflow: hidden;
         margin: 0 auto;
     }
     .wrapper .wrapper-ul{
@@ -445,14 +471,14 @@
         /*display: flex;*/
     }
     .wrapper .wrapper-li{
-        width: 680px;
-        height: auto;
+        height: 100%;
         /*overflow: hidden;*/
     }
     .wrapper .pro-items{
+        width: 680px;
         height: auto;
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         overflow: hidden;
     }
     .wrapper .pro-item{
