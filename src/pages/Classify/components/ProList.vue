@@ -393,7 +393,7 @@
             this.$nextTick(() => {
                 let width=0;
                 for (let  i = 0; i <this.proList.length; i++) {
-                    width+=this.$refs.proItems[0].getBoundingClientRect().width
+                    width+=this.$refs.proItems[0].getBoundingClientRect().width*2
                 }
                 console.log(this.$refs.wrapperList)
                 this.$refs.wrapperList.style.width=width+'px';                //$refs绑定元素
@@ -464,26 +464,31 @@
     .wrapper {
         width: 100%;
         overflow: hidden;
-        margin: 0 auto;
     }
     .wrapper .wrapper-ul{
         width: 100%;
-        /*display: flex;*/
+        display: flex;
+        padding-right: 90px;
     }
     .wrapper .wrapper-li{
+        width: 750px;
         height: 100%;
         /*overflow: hidden;*/
+        /*padding-left: 70px;*/
     }
     .wrapper .pro-items{
-        width: 680px;
-        height: auto;
+        width:750px;
         display: flex;
-        justify-content: space-between;
-        overflow: hidden;
+        justify-content: space-around;
+        flex-wrap:wrap;
+        /*margin-left: 70px;*/
+        /*overflow: hidden;*/
     }
     .wrapper .pro-item{
         width: 336px;
         height: 578px;
+        /*margin-right: 10px;*/
+
     }
     .wrapper .pro-item .image{
         width: 336px;
