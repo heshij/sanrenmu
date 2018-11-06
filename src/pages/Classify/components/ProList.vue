@@ -26,7 +26,7 @@
                                     :key="item.id"
                                     ref="proItems"
                             >
-                                <router-link to="/ProList">
+                                <router-link to="/ProDetails">
                                     <div class="image">
                                         <img src="../../.././images/classify/pro-list_002.jpg">
                                     </div>
