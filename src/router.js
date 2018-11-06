@@ -6,8 +6,8 @@ import ProList from './pages/Classify/components/ProList'
 import ShopCar from './pages/ShopCar/ShopCar.vue'
 import User from './pages/User/User.vue'
 import ProDetails from './pages/ProDetails/ProDetails.vue'
-import proAssess from './pages/ProDetails/proAssess.vue'
-import detailsImg from './pages/ProDetails/detailsImg.vue'
+import proAssess from './pages/ProDetails/components/proAssess.vue'
+import detailsImg from './pages/ProDetails/components/detailsImg.vue'
 import Search from './pages/Search/Search.vue'
 
 Vue.use(Router)

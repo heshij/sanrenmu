@@ -13,8 +13,8 @@
                 </li>
             </ul>
         </div>
-        <details-img></details-img>
-        <pro-assess></pro-assess>
+        <!--<details-img></details-img>
+        <pro-assess></pro-assess>-->
     </div>
 </template>
 
