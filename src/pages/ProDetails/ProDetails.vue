@@ -13,8 +13,9 @@
                 </li>
             </ul>
         </div>
-        <!--<details-img></details-img>
-        <pro-assess></pro-assess>-->
+        <div class="tab-com">
+            <router-view></router-view>
+        </div>
     </div>
 </template>
 
@@ -22,10 +23,12 @@
     import detailsHeader from './components/detailsHeader'
     import detailsImg from './components/detailsImg'
     import proAssess from './components/proAssess'
+    import ProDetailsMain from "./components/proDetailsMain";
 
     export default {
         name: "ProDetails",
         components: {
+            ProDetailsMain,
             detailsHeader,
             detailsImg,
             proAssess

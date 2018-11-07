@@ -8,9 +8,10 @@ import User from './pages/User/User.vue'
 import ProDetails from './pages/ProDetails/ProDetails.vue'
 import proAssess from './pages/ProDetails/components/proAssess.vue'
 import detailsImg from './pages/ProDetails/components/detailsImg.vue'
+import proDetailsMain from './pages/ProDetails/components/proDetailsMain.vue'
 import Search from './pages/Search/Search.vue'
 
-Vue.use(Router)
+Vue.use(Router);
 
 export default new Router({
     mode: 'history',
@@ -52,6 +53,10 @@ export default new Router({
             component: ProDetails,
             redirect: '/ProDetails',
             children: [
+                {
+                    path: '/ProDetails',
+                    component: proDetailsMain
+                },
                 {
                     path: '/ProDetails/detailsImg',
                     component: detailsImg
