@@ -52,14 +52,16 @@
                 </li>
             </ul>
         </div>
+        <details-img></details-img>
     </div>
 </template>
 
 <script>
     import Banner from "./banner";
+    import DetailsImg from "./detailsImg";
     export default {
         name: "proDetailsMain",
-        components: {Banner}
+        components: {DetailsImg, Banner}
     }
 </script>
 
@@ -117,6 +119,7 @@
     .proDetailsMain .info{
         width: 750px;
         height: auto;
+        margin-bottom: 200px;
     }
     .proDetailsMain .info .format{
         width: inherit;
