@@ -122,10 +122,15 @@
         width: inherit;
         height: 96px;
     }
-    .proDetailsMain .info .format li{
+    .proDetailsMain .info .format > li{
         width: auto;
         height: 96px;
         line-height: 96px;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+    .proDetailsMain .info .format > li > a > span{
+        font-size: 24px;
     }
     .proDetailsMain .info .format li ul{
         display: flex;
@@ -134,5 +139,6 @@
     .proDetailsMain .info .format li > a{
         display: flex;
         justify-content: space-between;
+        font-size: 18px;
     }
 </style>
