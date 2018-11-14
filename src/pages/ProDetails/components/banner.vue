@@ -55,6 +55,8 @@
     .banner {
         width: 750px;
         height: 732px;
+        position: relative;
+        z-index: 1;
     }
     .banner .swiper-slide .image-item {
         width: 750px;

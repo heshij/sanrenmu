@@ -1,7 +1,7 @@
 <template>
-    <div class="detailsHeader">
+    <div class="detailsHeader" @touchmove.prevent>
         <Header>
-            <template slot="left">
+            <template slot="left" >
                 <router-link to="/" tag="a">
                     <i class="iconfont">&#xe619;</i>
                     <span>销量</span>

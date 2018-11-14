@@ -16,7 +16,13 @@
         <div class="tab-com">
             <router-view></router-view>
         </div>
-        <div class="buyMenu">
+        <div class="maskWrap"  v-show="bool" @touchmove.prevent @mousewheel.prevent>
+            <div class="mask" >
+                <div class="bg" @click="closeMask()"></div>
+                <order class="order" :value="title" @close="closeMask()" ></order>
+            </div>
+        </div>
+        <div class="buyMenu" @touchmove.prevent>
             <div class="left">
                 <ul>
                     <li v-for="item of detailsMenuBarList" :key="item.id">
@@ -28,8 +34,8 @@
                 </ul>
             </div>
             <div class="right">
-                <button class="shopCar" >加入购物车</button>
-                <button class="buy">立即购买</button>
+                <button class="shopCar" @click="showMask()">加入购物车</button>
+                <button class="buy" @click="showMask()">立即购买</button>
             </div>
         </div>
     </div>
@@ -39,7 +45,8 @@
     import detailsHeader from './components/detailsHeader'
     import detailsImg from './components/detailsImg'
     import proAssess from './components/proAssess'
-    import ProDetailsMain from "./components/proDetailsMain";
+    import ProDetailsMain from "./components/proDetailsMain"
+    import order from "./components/order"
 
     export default {
         name: "ProDetails",
@@ -47,11 +54,14 @@
             ProDetailsMain,
             detailsHeader,
             detailsImg,
-            proAssess
+            proAssess,
+            order
         },
         data() {
             return {
                 active: 0,
+                bool:false,
+                title:"Aptamil 德国爱他美  婴儿奶粉  2段800/克 3罐装  6-10月",
                 detailsMenuBarList:[{
                     id:1,
                     link:"/",
@@ -82,6 +92,14 @@
         methods: {
             toActive(index) {
                 this.active = index;
+            },
+            showMask(){
+                this.bool = true
+                //this.$refs.ProDetails.className = 'ProDetailsShow'
+            },
+            closeMask(){
+                this.bool = false
+                //this.$refs.ProDetails.className = ''
             }
         }
 
@@ -94,11 +112,17 @@
         position: relative;
         padding-bottom: 96px;
     }
-
+    .ProDetailsShow{
+        height: 1195px;
+        overflow: hidden;
+        position: relative;
+    }
     .ProDetails .proTitleTab {
         width: 100%;
         height: 96px;
         margin-left: 30px;
+        /*position: relative;*/
+        /*z-index: 999;*/
     }
 
     .ProDetails .proTitleTab ul {
@@ -170,4 +194,35 @@
         margin-left: 20px;
         border-radius: 10px;
     }
+    /* 遮罩层 */
+    .ProDetails .maskWrap{
+        height: 1146px;
+        width: 100%;
+        position: fixed;
+        top: 96px;
+        left: 0;
+        z-index: 99;
+    }
+    .ProDetails .maskWrap  .mask{
+        height: 100%;
+        width: 100%;
+        position: relative;
+        z-index: 2;
+    }
+    .ProDetails .maskWrap .mask .bg{
+        width: inherit;
+        height: inherit;
+        background: #000;
+        opacity: 0.5;
+        position: relative;
+        z-index: 1;
+    }
+    .ProDetails .maskWrap .mask .order{
+        width: inherit;
+        background: #fff;
+        position: absolute;
+        bottom: 99px;
+        z-index: 3;
+    }
+
 </style>
