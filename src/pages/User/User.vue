@@ -4,6 +4,7 @@
         <user-info></user-info>
         <order-bar></order-bar>
         <discounts-bar></discounts-bar>
+        <user-sets></user-sets>
         <MenuBar></MenuBar>
     </div>
 </template>
@@ -13,9 +14,10 @@
     import UserInfo from "./components/userInfo";
     import OrderBar from "./components/orderBar";
     import DiscountsBar from "./components/discountsBar";
+    import UserSets from "./components/userSets";
     export default {
         name: "User",
-        components: {DiscountsBar, OrderBar, UserInfo, UserHeader}
+        components: {UserSets, DiscountsBar, OrderBar, UserInfo, UserHeader}
     }
 </script>
 

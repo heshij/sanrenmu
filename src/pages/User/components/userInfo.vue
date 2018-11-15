@@ -4,7 +4,7 @@
             <div class="userImage">
                 <!--<img src="../../.././images/user/userCat.png" alt="">-->
             </div>
-            <router-link to="User">点击登录</router-link>
+            <router-link to="/login">点击登录</router-link>
         </div>
         <div class="userMsg">
             <div class="userBg"></div>

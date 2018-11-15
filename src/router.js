@@ -10,6 +10,8 @@ import proAssess from './pages/ProDetails/components/proAssess.vue'
 import detailsImg from './pages/ProDetails/components/detailsImg.vue'
 import proDetailsMain from './pages/ProDetails/components/proDetailsMain.vue'
 import Search from './pages/Search/Search.vue'
+import login from './pages/login/login.vue'
+import register from './pages/login/register.vue'
 
 Vue.use(Router);
 
@@ -66,6 +68,16 @@ export default new Router({
                     component: proAssess
                 }
             ]
+        },
+        {
+            path: '/login',
+            name: 'login',
+            component: login
+        },
+        {
+            path: '/register',
+            name: 'register',
+            component: register
         }
         /*{
           path: '/about',
