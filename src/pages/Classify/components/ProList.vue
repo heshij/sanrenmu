@@ -395,7 +395,7 @@
                 for (let  i = 0; i <this.proList.length; i++) {
                     width+=this.$refs.proItems[0].getBoundingClientRect().width*2
                 }
-                console.log(this.$refs.wrapperList)
+                //console.log(this.$refs.wrapperList)
                 this.$refs.wrapperList.style.width=width+'px';                //$refs绑定元素
                 this.$nextTick(()=>{
                     if(!this.scroll){
@@ -406,7 +406,7 @@
                             scrollX:true,
                             eventPassthrough:'vertical'
                         })
-                        console.log(this.scroll)
+                        // console.log(this.scroll)
                     }else{
                         this.scroll.refresh()
                     }

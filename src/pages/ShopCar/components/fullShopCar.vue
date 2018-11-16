@@ -17,19 +17,19 @@
             </div>
             <div class="proList">
                 <ul>
-                    <li>
+                    <li  v-for="(item,index) of proList" :key="item.id">
                         <div class="main">
                             <label class="checkbox">
                                 <input type="checkbox">
                             </label>
-                            <img src="../../.././images/proDetails/shopCar_pic01.png" alt="">
+                            <img :src="item.ImgUrl" alt="">
                             <div class="msg">
-                                <h2>三刃木7081折叠刀小折刀水果刀氧化亚 黑+彩钛圈圈</h2>
+                                <h2>{{item.ProTitle}}</h2>
                                 <span>颜色：彩虹色</span>
                                 <form action="">
-                                    <span class="price">￥:39.0</span>
+                                    <span class="price">￥:{{item.PorPrice}}</span>
                                     <div class="myForm">
-                                        <button class="reduice">-</button>
+                                        <button class="reduce">-</button>
                                         <input type="text" value="1">
                                         <button class="add">+</button>
                                     </div>
@@ -58,7 +58,20 @@
 
 <script>
     export default {
-        name: "fullShopCar"
+        name: "fullShopCar",
+        data(){
+            return{
+                proList:[]
+            }
+        },
+        mounted(){
+            if(localStorage.getItem("proItems")){
+                let proList = JSON.parse(localStorage.getItem("proItems"));
+                this.proList = proList
+            }else{
+                this.$emit("proItemsNo")
+            }
+        }
     }
 </script>
 
