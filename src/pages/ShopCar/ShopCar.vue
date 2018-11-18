@@ -23,10 +23,10 @@
         },
         mounted(){
             if(localStorage.getItem("proItems")){
-                this.bool = true
-                console.log(localStorage.getItem("proItems"))
+                this.bool = true;
+                //console.log(localStorage.getItem("proItems"))
             }else{
-                this.bool = false
+                this.bool = false;
             }
         },
         methods:{

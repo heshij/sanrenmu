@@ -13,14 +13,21 @@
                     </div>
                     <span>领券</span>
                 </form>
-                <span>编辑</span>
+                <span @click="isDelete()">编辑</span>
             </div>
             <div class="proList">
                 <ul>
-                    <li  v-for="(item,index) of proList" :key="item.id">
-                        <div class="main">
+                    <li  v-for="item of proList" :key="item.id">
+                        <div class="main" ref="main">
                             <label class="checkbox">
-                                <input type="checkbox">
+                                <!--<b
+                                        @click="item.checked = !item.checked"
+                                ></b>-->
+                                <input
+                                        type="checkbox"
+                                        :checked="item.checked"
+                                        @click="item.checked = !item.checked"
+                                >
                             </label>
                             <img :src="item.ImgUrl" alt="">
                             <div class="msg">
@@ -29,9 +36,21 @@
                                 <form action="">
                                     <span class="price">￥:{{item.PorPrice}}</span>
                                     <div class="myForm">
-                                        <button class="reduce">-</button>
-                                        <input type="text" value="1">
-                                        <button class="add">+</button>
+                                        <button
+                                                type="button"
+                                                class="reduce"
+                                                @click="item.ProNums <= 1 ? item.ProNums = 1 : item.ProNums--"
+                                        >-</button>
+                                        <input
+                                                type="text"
+                                                value="1"
+                                                v-model="item.ProNums"
+                                        >
+                                        <button
+                                                type="button"
+                                                class="add"
+                                                @click="item.ProNums++"
+                                        >+</button>
                                     </div>
                                 </form>
                             </div>
@@ -43,14 +62,18 @@
         <div class="accountsBar">
             <form action="">
                 <div class="left">
-                    <label>
+                    <label @click="allCheched()">
                         <!--<b></b>-->
-                        <input type="checkbox">
+                        <input
+                                type="checkbox"
+                                :checked="isChecked"
+                        >
                         <span>全选</span>
                     </label>
-                    <span class="total">合计：<i>￥:39</i></span>
+                    <span class="total">合计：<i>￥:{{allTotal}}</i></span>
                 </div>
-                <div class="accounts">去结算</div>
+                <div class="accounts" v-if="isDeletes">去结算</div>
+                <div class="accounts delete" v-else @click="remove()">删除</div>
             </form>
         </div>
     </div>
@@ -61,16 +84,58 @@
         name: "fullShopCar",
         data(){
             return{
-                proList:[]
+                proList:[],
+                isDeletes:true
             }
         },
         mounted(){
             if(localStorage.getItem("proItems")){
-                let proList = JSON.parse(localStorage.getItem("proItems"));
-                this.proList = proList
+                // let proList = JSON.parse(localStorage.getItem("proItems"));
+                this.proList = JSON.parse(localStorage.getItem("proItems"));
             }else{
                 this.$emit("proItemsNo")
             }
+
+        },
+        methods:{
+            allCheched(){
+                this.proList.forEach((item,i)=>{
+                    this.proList[i].checked = !this.proList[i].checked;
+                })
+            },
+            isDelete(){
+                this.isDeletes = !this.isDeletes;
+                console.log(this.isDeletes)
+            },
+            remove(){
+                this.proList.forEach((item,i)=>{
+                    if (this.proList[i].checked === true){
+                        this.proList.splice(i)
+                    }
+                });
+                localStorage.setItem("proItems",JSON.stringify(this.proList))
+            }
+        },
+        computed:{
+            allTotal(){
+                let total = 0;
+                this.proList.forEach((item,i)=>{
+                    if(this.proList[i].checked){
+                        total += this.proList[i].PorPrice * this.proList[i].ProNums
+                    }
+                });
+                return total
+            },
+            isChecked(){
+                let bool = true;
+                this.proList.forEach((item)=>{
+                    if(item.checked === false){
+                        bool = false
+                    }
+                });
+                return bool;
+            },
+
         }
     }
 </script>
@@ -181,13 +246,14 @@
         width: 750px;
         height: 92px;
         line-height: 92px;
-        position: absolute;
+        position: fixed;
         bottom: 96px;
         border: 1px solid #cacaca;
         border-right: 0;
         border-left: 0;
         padding: 0 20px;
         box-sizing: border-box;
+        background-color: #fff;
     }
     .fullShopCar .accountsBar form{
         width: 710px;
