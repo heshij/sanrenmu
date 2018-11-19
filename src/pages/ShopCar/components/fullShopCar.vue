@@ -13,7 +13,7 @@
                     </div>
                     <span>领券</span>
                 </form>
-                <span @click="isDelete()">编辑</span>
+                <span @click="isDelete()">{{delText}}</span>
             </div>
             <div class="proList">
                 <ul>
@@ -62,7 +62,7 @@
         <div class="accountsBar">
             <form action="">
                 <div class="left">
-                    <label @click="allCheched()">
+                    <label @click="allChecked()">
                         <!--<b></b>-->
                         <input
                                 type="checkbox"
@@ -85,7 +85,8 @@
         data(){
             return{
                 proList:[],
-                isDeletes:true
+                isDeletes:true,
+                delText:"编辑"
             }
         },
         mounted(){
@@ -98,22 +99,35 @@
 
         },
         methods:{
-            allCheched(){
+            allChecked(){
                 this.proList.forEach((item,i)=>{
                     this.proList[i].checked = !this.proList[i].checked;
                 })
             },
             isDelete(){
                 this.isDeletes = !this.isDeletes;
-                console.log(this.isDeletes)
+                //console.log(this.isDeletes)
+                if (this.isDeletes===false){
+                    this.delText="完成"
+                } else {
+                    this.delText="编辑"
+                }
             },
             remove(){
+                let isCheckedList=[];
+                let noCheckedList=[];
                 this.proList.forEach((item,i)=>{
                     if (this.proList[i].checked === true){
-                        this.proList.splice(i)
+                        isCheckedList.push(item)
+                    }else{
+                        noCheckedList.push(item)
                     }
                 });
-                localStorage.setItem("proItems",JSON.stringify(this.proList))
+                localStorage.setItem("proItems",JSON.stringify(this.proList = noCheckedList))
+                if(this.proList.length === 0){
+                    localStorage.clear();
+                    this.$router.go(0);
+                }
             }
         },
         computed:{

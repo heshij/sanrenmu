@@ -11,25 +11,50 @@
                 <ul>
                     <li>
                         <label for="userName" class="iconfont">&#xe634;</label>
-                        <input type="text" placeholder="请输入您的账号" id="userName">
+                        <input
+                                type="text"
+                                placeholder="请输入您的账号"
+                                id="userName"
+                                v-model="account"
+                        >
                     </li>
                     <li>
                         <label for="passWord" class="iconfont">&#xe634;</label>
-                        <input type="text" placeholder="请输入您的密码" id="passWord">
+                        <input
+                                type="text"
+                                placeholder="请输入您的密码"
+                                id="passWord"
+                                v-model="password"
+                        >
                     </li>
                     <li>
                         <label for="confirm" class="iconfont">&#xe634;</label>
-                        <input type="text" placeholder="确认密码" id="confirm">
+                        <input
+                                type="text"
+                                placeholder="确认密码"
+                                id="confirm"
+                                v-model="isPsw"
+                        >
                     </li>
                 </ul>
                 <div class="code">
-                    <input type="text" placeholder="输入验证码">
-                    <input type="button" value="获取验证码">
+                    <input
+                            type="text"
+                            placeholder="输入验证码"
+                            id="code"
+                            class="code"
+                            v-model="code"
+                    >
+                    <img
+                            ref="codeImage"
+                            src="http://api.imecho.cn/dodiapi/code.php?n=4&info=30$80$40"
+                            @click="resetCode()"
+                    >
                 </div>
                 <div class="keepMsg">
                     <input type="checkbox" id="keepMsg"><label for="keepMsg">我已阅读并同意服务条款</label>
                 </div>
-                <button class="registerBtn">注册</button>
+                <button type="button" class="registerBtn" @click="toRegister()">注册</button>
                 <div class="login">
                     <router-link to="/login">已有账号？<span>直接登录</span></router-link>
                 </div>
@@ -40,7 +65,32 @@
 
 <script>
     export default {
-        name: "register"
+        name: "register",
+        data(){
+            return{
+                account: "",
+                password: "",
+                isPsw:"",
+                code: ""
+            }
+        },
+        methods:{
+            toRegister(){
+                let xhr = new XMLHttpRequest();
+                xhr.withCredentials = true;
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        window.console.log(xhr.responseText)
+                    }
+                };
+                xhr.open("POST", "http://api.imecho.cn/dodiapi/reg.php", true);
+                xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                xhr.send("account=" + this.account + "&password=" + this.password);
+            },
+            resetCode(){
+                this.$refs.codeImage.attributes.src.nodeValue = "http://api.imecho.cn/dodiapi/code.php?n=4&info=30$100$50";
+            }
+        }
     }
 </script>
 
@@ -132,7 +182,14 @@
         border-radius: 43px;
         text-align: center;
         font-size: 24px;
-        color: #ffffff;
+        color: #333333;
+    }
+
+    .register .myForm form .code img{
+        width: 250px;
+        height: inherit;
+        /*border-radius: 43px;*/
+        text-align: center;
     }
 
     .register .myForm form .keepMsg{

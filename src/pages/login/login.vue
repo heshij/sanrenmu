@@ -16,11 +16,21 @@
                 <ul>
                     <li>
                         <label for="userName" class="iconfont">&#xe634;</label>
-                        <input type="text" placeholder="请输入您的账号" id="userName">
+                        <input
+                                type="text"
+                                placeholder="请输入您的账号"
+                                id="userName"
+                                v-model="account"
+                        >
                     </li>
                     <li>
                         <label for="passWord" class="iconfont">&#xe634;</label>
-                        <input type="text" placeholder="请输入您的密码" id="passWord">
+                        <input
+                                type="text"
+                                placeholder="请输入您的密码"
+                                id="passWord"
+                                v-model="password"
+                        >
                     </li>
                 </ul>
                 <div class="sets">
@@ -30,7 +40,12 @@
                     <span>忘记密码</span>
                 </div>
                 <div class="loginBtn">
-                    <input type="button" value="登录" class="login">
+                    <input
+                            type="button"
+                            value="登录"
+                            class="login"
+                            @click.prevent="toLogin()"
+                    >
                     <router-link to="/register">
                         <input type="button" value="注册" class="register">
                     </router-link>
@@ -42,7 +57,30 @@
 
 <script>
     export default {
-        name: "login"
+        name: "login",
+        data(){
+            return{
+                "account":"",
+                "password":""
+            }
+        },
+        methods:{
+            toLogin(){
+                let xhrLogin = new XMLHttpRequest();
+                xhrLogin.withCredentials = true;
+                xhrLogin.onreadystatechange = () =>{
+                    if (xhrLogin.readyState === 4 && xhrLogin.status === 200) {
+                        let value = JSON.parse(xhrLogin.responseText).code;
+                        if(value === "100"){
+                            this.$router.push('/User');
+                        }
+                    }
+                };
+                xhrLogin.open("POST", "http://api.imecho.cn/dodiapi/login.php", true);
+                xhrLogin.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                xhrLogin.send("account=" + this.account + "&password=" + this.password);
+            }
+        }
     }
 </script>
 
@@ -154,11 +192,13 @@
         font-size: 24px;
         color: #ffffff;
     }
-    .login .myForm form .loginBtn{
+
+    .login .myForm form .loginBtn {
         width: 600px;
         height: auto;
         text-align: center;
     }
+
     .login .myForm form .loginBtn input {
         width: 480px;
         height: 85px;
