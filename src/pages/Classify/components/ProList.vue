@@ -28,7 +28,7 @@
                             >
                                 <router-link to="/ProDetails">
                                     <div class="image">
-                                        <img src="../../.././images/classify/pro-list_002.jpg">
+                                        <img :src="item.imgUrl">
                                     </div>
                                     <div class="msg">
                                         <span>{{item.price}}</span>
@@ -59,49 +59,49 @@
                     [
                         {
                             "id": 1,
-                            "imgUrl": "classifyPro01",
+                            "imgUrl": " https://heshij.github.io/img/pro-list_001.jpg",
                             "price": 19999,
                             "num": 233
                         },
                         {
                             "id": 2,
-                            "imgUrl": "classifyPro02",
+                            "imgUrl": "https://heshij.github.io/img/pro-list_002.jpg",
                             "price": 19999,
                             "num": 233
                         },
                         {
                             "id": 3,
-                            "imgUrl": "classifyPro03",
+                            "imgUrl": "https://heshij.github.io/img/pro-list_003.jpg",
                             "price": 19999,
                             "num": 233
                         },
                         {
                             "id": 4,
-                            "imgUrl": "classifyPro04",
+                            "imgUrl": "https://heshij.github.io/img/pro-list_004.jpg",
                             "price": 19999,
                             "num": 233
                         },
                         {
                             "id": 5,
-                            "imgUrl": "classifyPro05",
+                            "imgUrl": "https://heshij.github.io/img/pro-list_005.jpg",
                             "price": 19999,
                             "num": 233
                         },
                         {
                             "id": 6,
-                            "imgUrl": "classifyPro06",
+                            "imgUrl": "https://heshij.github.io/img/pro-list_006.jpg",
                             "price": 19999,
                             "num": 233
                         },
                         {
                             "id": 7,
-                            "imgUrl": "classifyPro07",
+                            "imgUrl": "https://heshij.github.io/img/pro-list_007.jpg",
                             "price": 19999,
                             "num": 233
                         },
                         {
                             "id": 8,
-                            "imgUrl": "classifyPro08",
+                            "imgUrl": "https://heshij.github.io/img/pro-list_008.jpg",
                             "price": 19999,
                             "num": 233
                         }
@@ -109,49 +109,49 @@
                     [
                         {
                             "id": 1,
-                            "imgUrl": "classifyPro01",
+                            "imgUrl": " https://heshij.github.io/img/pro-list_001.jpg",
                             "price": 19999,
                             "num": 233
                         },
                         {
                             "id": 2,
-                            "imgUrl": "classifyPro02",
+                            "imgUrl": "https://heshij.github.io/img/pro-list_002.jpg",
                             "price": 19999,
                             "num": 233
                         },
                         {
                             "id": 3,
-                            "imgUrl": "classifyPro03",
+                            "imgUrl": "https://heshij.github.io/img/pro-list_003.jpg",
                             "price": 19999,
                             "num": 233
                         },
                         {
                             "id": 4,
-                            "imgUrl": "classifyPro04",
+                            "imgUrl": "https://heshij.github.io/img/pro-list_004.jpg",
                             "price": 19999,
                             "num": 233
                         },
                         {
                             "id": 5,
-                            "imgUrl": "classifyPro05",
+                            "imgUrl": "https://heshij.github.io/img/pro-list_005.jpg",
                             "price": 19999,
                             "num": 233
                         },
                         {
                             "id": 6,
-                            "imgUrl": "classifyPro06",
+                            "imgUrl": "https://heshij.github.io/img/pro-list_006.jpg",
                             "price": 19999,
                             "num": 233
                         },
                         {
                             "id": 7,
-                            "imgUrl": "classifyPro07",
+                            "imgUrl": "https://heshij.github.io/img/pro-list_007.jpg",
                             "price": 19999,
                             "num": 233
                         },
                         {
                             "id": 8,
-                            "imgUrl": "classifyPro08",
+                            "imgUrl": "https://heshij.github.io/img/pro-list_008.jpg",
                             "price": 19999,
                             "num": 233
                         }
@@ -159,49 +159,49 @@
                     [
                         {
                             "id": 1,
-                            "imgUrl": "classifyPro01",
+                            "imgUrl": " https://heshij.github.io/img/pro-list_001.jpg",
                             "price": 19999,
                             "num": 233
                         },
                         {
                             "id": 2,
-                            "imgUrl": "classifyPro02",
+                            "imgUrl": "https://heshij.github.io/img/pro-list_002.jpg",
                             "price": 19999,
                             "num": 233
                         },
                         {
                             "id": 3,
-                            "imgUrl": "classifyPro03",
+                            "imgUrl": "https://heshij.github.io/img/pro-list_003.jpg",
                             "price": 19999,
                             "num": 233
                         },
                         {
                             "id": 4,
-                            "imgUrl": "classifyPro04",
+                            "imgUrl": "https://heshij.github.io/img/pro-list_004.jpg",
                             "price": 19999,
                             "num": 233
                         },
                         {
                             "id": 5,
-                            "imgUrl": "classifyPro05",
+                            "imgUrl": "https://heshij.github.io/img/pro-list_005.jpg",
                             "price": 19999,
                             "num": 233
                         },
                         {
                             "id": 6,
-                            "imgUrl": "classifyPro06",
+                            "imgUrl": "https://heshij.github.io/img/pro-list_006.jpg",
                             "price": 19999,
                             "num": 233
                         },
                         {
                             "id": 7,
-                            "imgUrl": "classifyPro07",
+                            "imgUrl": "https://heshij.github.io/img/pro-list_007.jpg",
                             "price": 19999,
                             "num": 233
                         },
                         {
                             "id": 8,
-                            "imgUrl": "classifyPro08",
+                            "imgUrl": "https://heshij.github.io/img/pro-list_008.jpg",
                             "price": 19999,
                             "num": 233
                         }
@@ -209,49 +209,49 @@
                     [
                         {
                             "id": 1,
-                            "imgUrl": "classifyPro01",
+                            "imgUrl": " https://heshij.github.io/img/pro-list_001.jpg",
                             "price": 19999,
                             "num": 233
                         },
                         {
                             "id": 2,
-                            "imgUrl": "classifyPro02",
+                            "imgUrl": "https://heshij.github.io/img/pro-list_002.jpg",
                             "price": 19999,
                             "num": 233
                         },
                         {
                             "id": 3,
-                            "imgUrl": "classifyPro03",
+                            "imgUrl": "https://heshij.github.io/img/pro-list_003.jpg",
                             "price": 19999,
                             "num": 233
                         },
                         {
                             "id": 4,
-                            "imgUrl": "classifyPro04",
+                            "imgUrl": "https://heshij.github.io/img/pro-list_004.jpg",
                             "price": 19999,
                             "num": 233
                         },
                         {
                             "id": 5,
-                            "imgUrl": "classifyPro05",
+                            "imgUrl": "https://heshij.github.io/img/pro-list_005.jpg",
                             "price": 19999,
                             "num": 233
                         },
                         {
                             "id": 6,
-                            "imgUrl": "classifyPro06",
+                            "imgUrl": "https://heshij.github.io/img/pro-list_006.jpg",
                             "price": 19999,
                             "num": 233
                         },
                         {
                             "id": 7,
-                            "imgUrl": "classifyPro07",
+                            "imgUrl": "https://heshij.github.io/img/pro-list_007.jpg",
                             "price": 19999,
                             "num": 233
                         },
                         {
                             "id": 8,
-                            "imgUrl": "classifyPro08",
+                            "imgUrl": "https://heshij.github.io/img/pro-list_008.jpg",
                             "price": 19999,
                             "num": 233
                         }
@@ -259,49 +259,49 @@
                     [
                         {
                             "id": 1,
-                            "imgUrl": "classifyPro01",
+                            "imgUrl": " https://heshij.github.io/img/pro-list_001.jpg",
                             "price": 19999,
                             "num": 233
                         },
                         {
                             "id": 2,
-                            "imgUrl": "classifyPro02",
+                            "imgUrl": "https://heshij.github.io/img/pro-list_002.jpg",
                             "price": 19999,
                             "num": 233
                         },
                         {
                             "id": 3,
-                            "imgUrl": "classifyPro03",
+                            "imgUrl": "https://heshij.github.io/img/pro-list_003.jpg",
                             "price": 19999,
                             "num": 233
                         },
                         {
                             "id": 4,
-                            "imgUrl": "classifyPro04",
+                            "imgUrl": "https://heshij.github.io/img/pro-list_004.jpg",
                             "price": 19999,
                             "num": 233
                         },
                         {
                             "id": 5,
-                            "imgUrl": "classifyPro05",
+                            "imgUrl": "https://heshij.github.io/img/pro-list_005.jpg",
                             "price": 19999,
                             "num": 233
                         },
                         {
                             "id": 6,
-                            "imgUrl": "classifyPro06",
+                            "imgUrl": "https://heshij.github.io/img/pro-list_006.jpg",
                             "price": 19999,
                             "num": 233
                         },
                         {
                             "id": 7,
-                            "imgUrl": "classifyPro07",
+                            "imgUrl": "https://heshij.github.io/img/pro-list_007.jpg",
                             "price": 19999,
                             "num": 233
                         },
                         {
                             "id": 8,
-                            "imgUrl": "classifyPro08",
+                            "imgUrl": "https://heshij.github.io/img/pro-list_008.jpg",
                             "price": 19999,
                             "num": 233
                         }
@@ -309,49 +309,49 @@
                     [
                         {
                             "id": 1,
-                            "imgUrl": "classifyPro01",
+                            "imgUrl": " https://heshij.github.io/img/pro-list_001.jpg",
                             "price": 19999,
                             "num": 233
                         },
                         {
                             "id": 2,
-                            "imgUrl": "classifyPro02",
+                            "imgUrl": "https://heshij.github.io/img/pro-list_002.jpg",
                             "price": 19999,
                             "num": 233
                         },
                         {
                             "id": 3,
-                            "imgUrl": "classifyPro03",
+                            "imgUrl": "https://heshij.github.io/img/pro-list_003.jpg",
                             "price": 19999,
                             "num": 233
                         },
                         {
                             "id": 4,
-                            "imgUrl": "classifyPro04",
+                            "imgUrl": "https://heshij.github.io/img/pro-list_004.jpg",
                             "price": 19999,
                             "num": 233
                         },
                         {
                             "id": 5,
-                            "imgUrl": "classifyPro05",
+                            "imgUrl": "https://heshij.github.io/img/pro-list_005.jpg",
                             "price": 19999,
                             "num": 233
                         },
                         {
                             "id": 6,
-                            "imgUrl": "classifyPro06",
+                            "imgUrl": "https://heshij.github.io/img/pro-list_006.jpg",
                             "price": 19999,
                             "num": 233
                         },
                         {
                             "id": 7,
-                            "imgUrl": "classifyPro07",
+                            "imgUrl": "https://heshij.github.io/img/pro-list_007.jpg",
                             "price": 19999,
                             "num": 233
                         },
                         {
                             "id": 8,
-                            "imgUrl": "classifyPro08",
+                            "imgUrl": "https://heshij.github.io/img/pro-list_008.jpg",
                             "price": 19999,
                             "num": 233
                         }
@@ -359,34 +359,6 @@
                 ]
             }
         },
-       /* methods: {
-            InitTabScroll(){
-                let width = 0;
-                for(let i = 0;i < this.proList.length; i++){
-                    width+=this.$refs.proItems[0].getBoundingClientRect().width;
-                }
-                console.log(width)
-                this.$refs.wrapperList.style.width=width+'px';
-                this.$nextTick(()=>{
-                    if(!this.scroll()){
-                        this.scroll = new BScroll(this.$refs.wrapper,{
-                            stackX:0,
-                            click:true,
-                            scrollX:true,
-                            scrollY:false,
-                            eventPassthrough:'vertical'
-                        })
-                    }else{
-                        this.scroll.refresh();
-                    }
-                })
-            }
-        },
-        created(){
-            this.$nextTick(()=>{
-                this.InitTabScroll();
-            })
-        }*/
         mounted() {
             //即定时器 20ms
 
