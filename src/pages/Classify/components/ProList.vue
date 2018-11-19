@@ -8,12 +8,14 @@
                             v-for="(item,index) of slideBarList"
                             :key="index"
                             :class="{on : index === active}"
+                            @click="toClick(index)"
                     >
                         {{item}}
                     </li>
                 </ul>
             </div>
-            <div class="wrapper" ref="wrapper" >
+
+           <!-- <div class="wrapper" ref="wrapper" >
                 <ul class="wrapper-ul" ref="wrapperList">
                     <li class="wrapper-li"
                         v-for="(items,index) of proList"
@@ -39,7 +41,37 @@
                         </ul>
                     </li>
                 </ul>
-            </div>
+            </div>-->
+
+            <swiper :options="swiperOption" tag="ul" class="wrapper">
+                <!-- slides -->
+                <swiper-slide
+                        tag="li"
+                        v-for="(items,index) of proList"
+                        class="wrapper-li"
+                        :key="index"
+                >
+                    <ul class="pro-items" >
+                        <li
+                                class="pro-item"
+                                v-for="item of items"
+                                :key="item.id"
+                                ref="proItems"
+                        >
+                            <router-link to="/ProDetails">
+                                <div class="image">
+                                    <img :src="item.imgUrl">
+                                </div>
+                                <div class="msg">
+                                    <span>{{item.price}}</span>
+                                    <span>月销{{item.num}}笔</span>
+                                </div>
+                            </router-link>
+                        </li>
+                    </ul>
+                </swiper-slide>
+
+            </swiper>
         </div>
         <MenuBar></MenuBar>
     </div>
@@ -47,12 +79,18 @@
 
 <script>
     import proListHeader from "./proListHeader";
-    import  BScroll from 'better-scroll';
+    // import  BScroll from 'better-scroll';
+    import 'swiper/dist/css/swiper.css'
+    import {
+        swiper,
+        swiperSlide
+    } from 'vue-awesome-swiper'
     export default {
         name: "ProList",
-        components: {proListHeader},
+        components: {swiper,swiperSlide,proListHeader},
         data() {
             return {
+                swiperOption: {},
                 active: 0,
                 slideBarList: ["全部", "家居型", "户外型", "礼盒型", "多用型", "其他"],
                 proList: [
@@ -359,7 +397,12 @@
                 ]
             }
         },
-        mounted() {
+        methods:{
+            toClick(index){
+                this.active = index;
+            }
+        }
+        /*mounted() {
             //即定时器 20ms
 
             this.$nextTick(() => {
@@ -384,7 +427,7 @@
                     }
                 })
             })
-        }
+        }*/
     }
 </script>
 
