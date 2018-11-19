@@ -31,7 +31,8 @@
                             >
                                 <router-link to="/ProList">
                                     <div class="image">
-                                        <img :src="require(`../../images/classify/${item.imgUrl}.png`)">
+                                        <!--<img :src="require(`../../images/classify/${item.imgUrl}.png`)">-->
+                                        <img :src="item.imgUrl" alt="">
                                     </div>
                                     <p>{{item.text}}</p>
                                 </router-link>
