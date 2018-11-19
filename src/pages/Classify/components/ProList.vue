@@ -2,7 +2,7 @@
     <div class="ProList">
         <proListHeader></proListHeader>
         <div class="main">
-            <div class="sidebar">
+            <!--<div class="sidebar">
                 <ul>
                     <li
                             v-for="(item,index) of slideBarList"
@@ -13,7 +13,7 @@
                         {{item}}
                     </li>
                 </ul>
-            </div>
+            </div>-->
 
            <!-- <div class="wrapper" ref="wrapper" >
                 <ul class="wrapper-ul" ref="wrapperList">
@@ -70,7 +70,8 @@
                         </li>
                     </ul>
                 </swiper-slide>
-
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
             </swiper>
         </div>
         <MenuBar></MenuBar>
@@ -90,7 +91,23 @@
         components: {swiper,swiperSlide,proListHeader},
         data() {
             return {
-                swiperOption: {},
+                swiperOption: {
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
+                        renderBullet: function (index, className,text) {
+                            switch (index) {
+                                case 0:text="全部";break;
+                                case 1:text="家居型";break;
+                                case 2:text="户外型";break;
+                                case 3:text="礼盒型";break;
+                                case 4:text="多用型";break;
+                                case 5:text="其他";break;
+                            }
+                            return '<span class="' + className + '">' + text + '</span>';
+                        },
+                    }
+                },
                 active: 0,
                 slideBarList: ["全部", "家居型", "户外型", "礼盒型", "多用型", "其他"],
                 proList: [
