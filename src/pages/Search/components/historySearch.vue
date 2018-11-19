@@ -9,7 +9,7 @@
         <template slot="bottom">
             <ul>
                 <li v-for="(item,index) of historySearch" :key="index">
-                    <router-link to="/Search">{{item}}</router-link>
+                    <router-link to="/Classify">{{item}}</router-link>
                 </li>
             </ul>
         </template>
