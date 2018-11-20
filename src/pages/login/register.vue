@@ -21,7 +21,7 @@
                     <li>
                         <label for="passWord" class="iconfont">&#xe634;</label>
                         <input
-                                type="text"
+                                type="password"
                                 placeholder="请输入您的密码"
                                 id="passWord"
                                 v-model="password"
@@ -30,7 +30,7 @@
                     <li>
                         <label for="confirm" class="iconfont">&#xe634;</label>
                         <input
-                                type="text"
+                                type="password"
                                 placeholder="确认密码"
                                 id="confirm"
                                 v-model="isPsw"
@@ -76,16 +76,22 @@
         },
         methods:{
             toRegister(){
-                let xhr = new XMLHttpRequest();
-                xhr.withCredentials = true;
-                xhr.onreadystatechange = function() {
-                    if (xhr.readyState === 4 && xhr.status === 200) {
-                        window.console.log(xhr.responseText)
-                    }
-                };
-                xhr.open("POST", "http://api.imecho.cn/dodiapi/reg.php", true);
-                xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-                xhr.send("account=" + this.account + "&password=" + this.password);
+                if(this.account != null && this.password === this.isPsw){
+                    let xhr = new XMLHttpRequest();
+                    xhr.withCredentials = true;
+                    xhr.onreadystatechange = function() {
+                        if (xhr.readyState === 4 && xhr.status === 200) {
+                            window.console.log(xhr.responseText)
+                        }
+                    };
+                    xhr.open("POST", "http://api.imecho.cn/dodiapi/reg.php", true);
+                    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                    xhr.send("account=" + this.account + "&password=" + this.password);
+                }else {
+                    console.log("密码不一致")
+                }
+
+
             },
             resetCode(){
                 this.$refs.codeImage.attributes.src.nodeValue = "http://api.imecho.cn/dodiapi/code.php?n=4&info=30$100$50";

@@ -26,7 +26,7 @@
                     <li>
                         <label for="passWord" class="iconfont">&#xe634;</label>
                         <input
-                                type="text"
+                                type="password"
                                 placeholder="请输入您的密码"
                                 id="passWord"
                                 v-model="password"
@@ -66,19 +66,26 @@
         },
         methods:{
             toLogin(){
-                let xhrLogin = new XMLHttpRequest();
-                xhrLogin.withCredentials = true;
-                xhrLogin.onreadystatechange = () =>{
-                    if (xhrLogin.readyState === 4 && xhrLogin.status === 200) {
-                        let value = JSON.parse(xhrLogin.responseText).code;
-                        if(value === "100"){
-                            this.$router.push('/User');
+                if(this.account!==""){
+                    let xhrLogin = new XMLHttpRequest();
+                    xhrLogin.withCredentials = true;
+                    xhrLogin.onreadystatechange = () =>{
+                        if (xhrLogin.readyState === 4 && xhrLogin.status === 200) {
+                            let value = JSON.parse(xhrLogin.responseText).code;
+                            if(value === "100"){
+                                this.$router.push('/User');
+                            }else {
+                                console.log("账号或密码错误！！")
+                            }
                         }
-                    }
-                };
-                xhrLogin.open("POST", "http://api.imecho.cn/dodiapi/login.php", true);
-                xhrLogin.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-                xhrLogin.send("account=" + this.account + "&password=" + this.password);
+                    };
+                    xhrLogin.open("POST", "http://api.imecho.cn/dodiapi/login.php", true);
+                    xhrLogin.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                    xhrLogin.send("account=" + this.account + "&password=" + this.password);
+                }else {
+                    console.log("账号或密码不能为空！！")
+                }
+
             }
         }
     }
