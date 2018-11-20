@@ -9,7 +9,13 @@
         <template slot="bottom">
             <ul>
                 <li v-for="(item,index) of historySearch" :key="index">
-                    <router-link to="/Classify">{{item}}</router-link>
+                    <router-link
+                            to="/Classify"
+                            @touchstart.native="showDeleteButton()"
+                            @touchend.native="clearLoop()"
+                    >
+                    {{item}}
+                    </router-link>
                 </li>
             </ul>
         </template>
@@ -25,6 +31,18 @@
             return{
                 historySearch:["瑞士军刀","水果刀","其他","A12系列","菜刀","水果刀"]
             }
+        },
+        methods:{
+            showDeleteButton() {
+                clearTimeout(this.Loop); //再次清空定时器，防止重复注册定时器
+                this.Loop = setTimeout(function() {
+                    // this.historySearch.splice(0,1)
+                }.bind(this), 1000);
+            },
+            clearLoop() {
+                clearTimeout(this.Loop);
+            },
+
         }
     }
 </script>
