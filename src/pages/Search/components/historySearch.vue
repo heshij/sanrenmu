@@ -24,6 +24,9 @@
 
 <script>
     import SearchList from "./searchList";
+    import { Dialog } from 'vant';
+    import Vue from 'vue'
+    Vue.use(Dialog);
     export default {
         name: "historySearch",
         components: {SearchList},
@@ -36,7 +39,15 @@
             showDeleteButton() {
                 clearTimeout(this.Loop); //再次清空定时器，防止重复注册定时器
                 this.Loop = setTimeout(function() {
-                    // this.historySearch.splice(0,1)
+                    Dialog.confirm({
+                        title: '是否删除该历史记录',
+                        // message: '弹窗内容'
+                    }).then(() => {
+                        // on confirm
+                        // this.historySearch.splice(0,1)
+                    }).catch(() => {
+                        // on cancel
+                    });
                 }.bind(this), 1000);
             },
             clearLoop() {
