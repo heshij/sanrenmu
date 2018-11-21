@@ -4,7 +4,7 @@
             <div class="merchant">
                 <form action="">
                     <div class="left">
-                        <input type="checkbox" class="merAllCheck">
+                        <!--<input type="checkbox" class="merAllCheck">-->
                         <router-link to="/ShopCar" class="iconfont">
                             <i>&#xe619;</i>
                             <span>kelly家的故事</span>
@@ -310,5 +310,8 @@
         border-radius: 30px;
         background-color: #087ccd;
         font-size: 22px;
+    }
+    .fullShopCar .accountsBar form .delete{
+        background-color: #f72401;
     }
 </style>

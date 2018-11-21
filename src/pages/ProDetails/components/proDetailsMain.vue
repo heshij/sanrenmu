@@ -6,7 +6,7 @@
                 <h2>三刃木4077折叠刀随身便携小刀水果刀银色脉动纹</h2>
                 <span>￥255.00</span>
             </div>
-            <div class="right">
+            <div class="right" @click="COLLECT({value:1})">
                 <span class="iconfont">&#xe619;</span>
                 <span>收藏</span>
             </div>
@@ -59,9 +59,17 @@
 <script>
     import Banner from "./banner";
     import DetailsImg from "./detailsImg";
+    import { mapMutations } from 'vuex'
     export default {
         name: "proDetailsMain",
-        components: {DetailsImg, Banner}
+        components: {DetailsImg, Banner},
+        methods:{
+            /*collect(){
+                this.$store.commit("add");
+                console.log(111)
+            }*/
+            ...mapMutations(['COLLECT'])
+        }
     }
 </script>
 

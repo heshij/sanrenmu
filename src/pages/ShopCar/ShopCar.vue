@@ -40,5 +40,6 @@
 <style scoped>
     .ShopCar{
         padding-top: 96px;
+        padding-bottom: 192px;
     }
 </style>

@@ -2,7 +2,7 @@
     <div class="userInfo">
         <div class="userHeader">
             <div class="userImage">
-                <!--<img src="../../.././images/user/userCat.png" alt="">-->
+                <img src="../../.././images/user/userCat.png" alt="">
             </div>
             <router-link to="/login">点击登录</router-link>
         </div>
@@ -11,7 +11,10 @@
             <ul>
                 <li v-for="item of userMsgList" :key="item.id">
                     <router-link :to="item.link">
-                        <span class="iconfont" v-html="item.icon"></span>
+                        <span class="countBox">
+                            <span class="iconfont" v-html="item.icon"></span>
+                            <i class="count">{{num}}</i>
+                        </span>
                         <span class="text">{{item.text}}</span>
                     </router-link>
                 </li>
@@ -21,46 +24,53 @@
 </template>
 
 <script>
+    import {mapState} from 'vuex'
+
     export default {
         name: "userInfo",
-        data(){
-            return{
-                userMsgList:[{
-                    id:1,
-                    link:"/User",
-                    icon:"&#xe634;",
-                    text:"收藏商品"
-                },{
-                    id:2,
-                    link:"/User",
-                    icon:"&#xe634;",
-                    text:"收藏店铺"
-                },{
-                    id:3,
-                    link:"/User",
-                    icon:"&#xe634;",
-                    text:"浏览记录"
-                },{
-                    id:4,
-                    link:"/User",
-                    icon:"&#xe634;",
-                    text:"编辑资料"
+        data() {
+            return {
+                userMsgList: [{
+                    id: 1,
+                    link: "/User",
+                    icon: "&#xe634;",
+                    text: "收藏商品",
+                    num: 0
+                }, {
+                    id: 2,
+                    link: "/User",
+                    icon: "&#xe634;",
+                    text: "收藏店铺",
+                }, {
+                    id: 3,
+                    link: "/User",
+                    icon: "&#xe634;",
+                    text: "浏览记录",
+                }, {
+                    id: 4,
+                    link: "/User",
+                    icon: "&#xe634;",
+                    text: "编辑资料",
                 }]
             }
+        },
+        computed: {
+            ...mapState(["num"])
         }
     }
 </script>
 
 <style scoped>
-    .userInfo{
+    .userInfo {
         width: 750px;
         height: 290px;
-        background: url("../../.././images/user/user-bg.png") ;
+        background: url("../../.././images/user/user-bg.png");
         background-size: 100% auto;
         position: relative;
 
     }
-    .userInfo .userHeader{
+
+    .userInfo .userHeader {
         width: 300px;
         height: 194px;
         display: flex;
@@ -69,7 +79,8 @@
         align-items: center;
         position: relative;
     }
-    .userInfo .userHeader .userImage{
+
+    .userInfo .userHeader .userImage {
         width: 87px;
         height: 87px;
         border-radius: 50%;
@@ -81,29 +92,34 @@
         right: 0;
         margin: auto;
     }
-    .userInfo .userHeader .userImage img{
+
+    .userInfo .userHeader .userImage img {
         width: 87px;
         height: 87px;
     }
-    .userInfo .userHeader a{
+
+    .userInfo .userHeader a {
         color: #ffffff;
         font-size: 28px;
         line-height: 40px;
         position: absolute;
         bottom: 0;
     }
-    .userInfo .userMsg{
+
+    .userInfo .userMsg {
         width: inherit;
         height: 96px;
         position: relative;
     }
-    .userInfo .userMsg .userBg{
+
+    .userInfo .userMsg .userBg {
         width: inherit;
         height: 96px;
         background: url("../../.././images/user/user-bg.png") -120px -20px;
         filter: blur(3px);
         position: absolute;
     }
+
     .userInfo .userMsg ul {
         width: inherit;
         height: inherit;
@@ -125,5 +141,28 @@
         color: #ffffff;
         font-size: 24px;
         line-height: 38px;
+    }
+
+    .countBox {
+        position: relative;
+    }
+
+    .countBox i {
+        display: none;
+        position: absolute;
+        width: 36px;
+        height: 36px;
+        top: -14px;
+        right: -28px;
+        background: #087ccd;
+        color: #fff;
+        font-size: 18px;
+        text-align: center;
+        line-height: 36px;
+        border-radius: 50%;
+    }
+
+    .userInfo .userMsg ul li:first-child a .countBox i {
+        display: block;
     }
 </style>

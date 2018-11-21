@@ -8,11 +8,14 @@ import './style/iconfont.css'
 import axios from 'axios'
 import Vant from 'vant';
 import 'vant/lib/index.css';
+import store from './store/index'
+
 Vue.use(Vant);
 Vue.config.productionTip = false;
 Vue.prototype.$http = axios;
 Vue.use(global_menuBar);
 new Vue({
-  router,
-  render: h => h(App)
+    router,
+    store,
+    render: h => h(App)
 }).$mount('#app');
