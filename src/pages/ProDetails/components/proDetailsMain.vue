@@ -7,7 +7,7 @@
                 <span>￥255.00</span>
             </div>
             <div class="right" @click="COLLECT({value:1})">
-                <span class="iconfont">&#xe619;</span>
+                <span class="iconfont">&#xe702;</span>
                 <span>收藏</span>
             </div>
         </div>
@@ -16,7 +16,7 @@
                 <li>
                     <router-link to="/ProDetails">
                         <span>请选择：规格/颜色</span>
-                        <span class="iconfont">&#xe619;</span>
+                        <span class="iconfont">&#xe62e;</span>
                     </router-link>
                 </li>
                 <li>
@@ -24,30 +24,30 @@
                         <ul>
                             <li>
                                 <router-link to="/ProDetails">
-                                    <span class="iconfont">&#xe619;</span>
+                                    <span class="iconfont"></span>
                                     <span>自营正品</span>
                                 </router-link>
                             </li>
                             <li>
                                 <router-link to="/ProDetails">
-                                    <span class="iconfont">&#xe619;</span>
+                                    <span class="iconfont"></span>
                                     <span>自营正品</span>
                                 </router-link>
                             </li>
                             <li>
                                 <router-link to="/ProDetails">
-                                    <span class="iconfont">&#xe619;</span>
+                                    <span class="iconfont"></span>
                                     <span>自营正品</span>
                                 </router-link>
                             </li>
                         </ul>
-                        <span class="iconfont">&#xe619;</span>
+                        <span class="iconfont">&#xe62e;</span>
                     </router-link>
                 </li>
                 <li>
                     <router-link to="/ProDetails">
                         <span>产品参数</span>
-                        <span class="iconfont">&#xe619;</span>
+                        <span class="iconfont">&#xe62e;</span>
                     </router-link>
                 </li>
             </ul>

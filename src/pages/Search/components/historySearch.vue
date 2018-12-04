@@ -3,7 +3,7 @@
         <template slot="top">
            <div class="title">
                <h2>历史搜索</h2>
-               <span class="iconfont">&#xe634;</span>
+               <span class="iconfont">&#xe63f;</span>
            </div>
         </template>
         <template slot="bottom">

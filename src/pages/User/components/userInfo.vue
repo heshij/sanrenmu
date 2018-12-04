@@ -33,23 +33,23 @@
                 userMsgList: [{
                     id: 1,
                     link: "/User",
-                    icon: "&#xe634;",
+                    icon: "&#xe702;",
                     text: "收藏商品",
                     num: 0
                 }, {
                     id: 2,
                     link: "/User",
-                    icon: "&#xe634;",
+                    icon: "&#xe650;",
                     text: "收藏店铺",
                 }, {
                     id: 3,
                     link: "/User",
-                    icon: "&#xe634;",
+                    icon: "&#xe72b;",
                     text: "浏览记录",
                 }, {
                     id: 4,
                     link: "/User",
-                    icon: "&#xe634;",
+                    icon: "&#xe623;",
                     text: "编辑资料",
                 }]
             }

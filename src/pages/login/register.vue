@@ -2,7 +2,7 @@
     <div class="register">
         <div class="top">
             <router-link to="/login">
-                <span class="iconfont">&#xe634;</span>
+                <span class="iconfont">&#xe643;</span>
                 <span>注册</span>
             </router-link>
         </div>
@@ -10,7 +10,7 @@
             <form action="">
                 <ul>
                     <li>
-                        <label for="userName" class="iconfont">&#xe634;</label>
+                        <label for="userName" class="iconfont">&#xe63c;</label>
                         <input
                                 type="text"
                                 placeholder="请输入您的账号"
@@ -19,7 +19,7 @@
                         >
                     </li>
                     <li>
-                        <label for="passWord" class="iconfont">&#xe634;</label>
+                        <label for="passWord" class="iconfont">&#xe7b8;</label>
                         <input
                                 type="password"
                                 placeholder="请输入您的密码"
@@ -28,7 +28,7 @@
                         >
                     </li>
                     <li>
-                        <label for="confirm" class="iconfont">&#xe634;</label>
+                        <label for="confirm" class="iconfont">&#xe7b8;</label>
                         <input
                                 type="password"
                                 placeholder="确认密码"
@@ -51,9 +51,10 @@
                             @click="resetCode()"
                     >
                 </div>
-                <div class="keepMsg">
+                <!--<div class="keepMsg">
                     <input type="checkbox" id="keepMsg"><label for="keepMsg">我已阅读并同意服务条款</label>
-                </div>
+                </div>-->
+                <check-box-register class="keepMsg"></check-box-register>
                 <button type="button" class="registerBtn" @click="toRegister()">注册</button>
                 <div class="login">
                     <router-link to="/login">已有账号？<span>直接登录</span></router-link>
@@ -64,8 +65,10 @@
 </template>
 
 <script>
+    import CheckBoxRegister from "./CheckBoxRegister";
     export default {
         name: "register",
+        components: {CheckBoxRegister},
         data(){
             return{
                 account: "",

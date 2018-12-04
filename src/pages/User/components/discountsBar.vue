@@ -30,23 +30,23 @@
                 userMsgList:[{
                     id:1,
                     link:"/User",
-                    icon:"&#xe634;",
-                    text:"收藏商品"
+                    icon:"&#xe610;",
+                    text:"现金"
                 },{
                     id:2,
                     link:"/User",
-                    icon:"&#xe634;",
-                    text:"收藏店铺"
+                    icon:"&#xe614;",
+                    text:"红包"
                 },{
                     id:3,
                     link:"/User",
-                    icon:"&#xe634;",
-                    text:"浏览记录"
+                    icon:"&#xe617;",
+                    text:"礼品卡"
                 },{
                     id:4,
                     link:"/User",
-                    icon:"&#xe634;",
-                    text:"编辑资料"
+                    icon:"&#xe645;",
+                    text:"积分"
                 }]
             }
         }

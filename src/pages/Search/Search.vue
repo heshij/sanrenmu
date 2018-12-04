@@ -1,7 +1,7 @@
 <template>
     <div class="Search">
         <div class="searchTop">
-            <router-link to="/" class="iconfont">&#xe634;</router-link>
+            <router-link to="/" class="iconfont">&#xe62b;</router-link>
             <form action="">
                 <input type="text">
             </form>

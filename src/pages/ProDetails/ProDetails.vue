@@ -65,12 +65,12 @@
                 detailsMenuBarList:[{
                     id:1,
                     link:"/",
-                    icon:"&#xe634;",
+                    icon:"&#xe644;",
                     text:"客服"
                 },{
                     id:2,
                     link:"/Search",
-                    icon:"&#xe62b;",
+                    icon:"&#xe650;",
                     text:"进店"
                 }],
                 proTitleTab: [

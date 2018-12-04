@@ -19,43 +19,43 @@
                 userSetsList:[{
                     id:1,
                     link:"/User",
-                    icon:"&#xe634;",
-                    text:"收藏商品"
+                    icon:"&#xe61a;",
+                    text:"开售提醒"
                 },{
                     id:2,
                     link:"/User",
-                    icon:"&#xe634;",
-                    text:"收藏店铺"
+                    icon:"&#xe675;",
+                    text:"心愿单"
                 },{
                     id:3,
                     link:"/User",
-                    icon:"&#xe634;",
-                    text:"浏览记录"
+                    icon:"&#xe607;",
+                    text:"意见反馈"
                 },{
                     id:4,
                     link:"/User",
-                    icon:"&#xe634;",
-                    text:"编辑资料"
+                    icon:"&#xe635;",
+                    text:"签到领奖"
                 },{
                     id:5,
                     link:"/User",
-                    icon:"&#xe634;",
-                    text:"收藏店铺"
+                    icon:"&#xe61d;",
+                    text:"我的评价"
                 },{
                     id:6,
                     link:"/User",
-                    icon:"&#xe634;",
-                    text:"浏览记录"
+                    icon:"&#xe64d;",
+                    text:"售后服务"
                 },{
                     id:7,
                     link:"/User",
-                    icon:"&#xe634;",
-                    text:"编辑资料"
+                    icon:"&#xe640;",
+                    text:"活动记时"
                 },{
                     id:8,
                     link:"/User",
-                    icon:"&#xe634;",
-                    text:"编辑资料"
+                    icon:"&#xe637;",
+                    text:"客服中心"
                 }]
             }
         }

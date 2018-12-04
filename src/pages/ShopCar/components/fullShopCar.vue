@@ -6,9 +6,9 @@
                     <div class="left">
                         <!--<input type="checkbox" class="merAllCheck">-->
                         <router-link to="/ShopCar" class="iconfont">
-                            <i>&#xe619;</i>
+                            <i>&#xe650;</i>
                             <span>kelly家的故事</span>
-                            <i>&#xe619;</i>
+                            <i>&#xe62e;</i>
                         </router-link>
                     </div>
                     <span>领券</span>

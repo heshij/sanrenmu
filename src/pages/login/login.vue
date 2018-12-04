@@ -2,7 +2,7 @@
     <div class="login">
         <div class="top">
             <router-link to="/User">
-                <span class="iconfont">&#xe634;</span>
+                <span class="iconfont">&#xe643;</span>
                 <span>登录</span>
             </router-link>
         </div>
@@ -15,7 +15,7 @@
             <form action="">
                 <ul>
                     <li>
-                        <label for="userName" class="iconfont">&#xe634;</label>
+                        <label for="userName" class="iconfont">&#xe63c;</label>
                         <input
                                 type="text"
                                 placeholder="请输入您的账号"
@@ -24,7 +24,7 @@
                         >
                     </li>
                     <li>
-                        <label for="passWord" class="iconfont">&#xe634;</label>
+                        <label for="passWord" class="iconfont">&#xe7b8;</label>
                         <input
                                 type="password"
                                 placeholder="请输入您的密码"
@@ -34,9 +34,10 @@
                     </li>
                 </ul>
                 <div class="sets">
-                    <div class="keepPsw">
+                    <!--<div class="keepPsw">
                         <input type="checkbox" id="keepPsw"><label for="keepPsw">记住密码</label>
-                    </div>
+                    </div>-->
+                    <check-box-login></check-box-login>
                     <span>忘记密码</span>
                 </div>
                 <div class="loginBtn">
@@ -56,8 +57,12 @@
 </template>
 
 <script>
+    import CheckBoxLogin from "./CheckBoxLogin";
     export default {
         name: "login",
+        components:{
+            CheckBoxLogin
+        },
         data(){
             return{
                 "account":"",

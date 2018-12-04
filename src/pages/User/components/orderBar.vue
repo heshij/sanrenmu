@@ -4,7 +4,7 @@
             <template slot="title">
                 <router-link to="/User" class="title">
                     <span>我的订单</span>
-                    <i class="iconfont">&#xe619;</i>
+                    <i class="iconfont">&#xe62e;</i>
                 </router-link>
             </template>
             <template slot="barMain">
@@ -31,28 +31,28 @@
                 userMsgList:[{
                     id:1,
                     link:"/User",
-                    icon:"&#xe634;",
-                    text:"收藏商品"
+                    icon:"&#xe633;",
+                    text:"待付款"
                 },{
                     id:2,
                     link:"/User",
-                    icon:"&#xe634;",
-                    text:"收藏店铺"
+                    icon:"&#xe69e;",
+                    text:"代发货"
                 },{
                     id:3,
                     link:"/User",
-                    icon:"&#xe634;",
-                    text:"浏览记录"
+                    icon:"&#xe616;",
+                    text:"待收货"
                 },{
                     id:4,
                     link:"/User",
-                    icon:"&#xe634;",
-                    text:"编辑资料"
+                    icon:"&#xe60e;",
+                    text:"待评价"
                 },{
                     id:5,
                     link:"/User",
-                    icon:"&#xe634;",
-                    text:"收藏店铺"
+                    icon:"&#xe6cf;",
+                    text:"退货退款"
                 }]
             }
         }
